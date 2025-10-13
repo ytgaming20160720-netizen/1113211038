@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1113211038</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -2;
+            background: linear-gradient(120deg, #f8fafc 0%, #e0e7ff 100%);
+        }
+        body::after {
+            content: '';
+            position: fixed;
+            top: -10%; left: -10%; right: -10%; bottom: -10%;
+            z-index: -1;
+            background: radial-gradient(circle at 20% 30%, #a5b4fc88 0%, transparent 60%),
+                        radial-gradient(circle at 80% 70%, #f472b688 0%, transparent 60%),
+                        radial-gradient(circle at 50% 90%, #facc1588 0%, transparent 70%);
+            filter: blur(60px) brightness(1.1);
+            opacity: 0.7;
+            pointer-events: none;
+            animation: bgmove 12s linear infinite alternate;
+        }
+        @keyframes bgmove {
+            0% { filter: blur(60px) brightness(1.1); opacity: 0.7; }
+            100% { filter: blur(80px) brightness(1.15); opacity: 0.85; }
+        }
+        
+        h1 {
+            color: #4f46e5;
+            margin-bottom: 0.5em;
+            margin-top: -2em;
+            font-size: 3em;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 8px #c7d2fe;
+        }
+        .img-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5em;
+        }
+        .img-container img {
+            max-width: 320px;
+            width: 90vw;
+            border-radius: 1.5em;
+            box-shadow: 0 4px 24px 0 #6366f180;
+            border: 4px solid #a5b4fc;
+            display: block;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        .img-container p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-shadow: 0 2px 8px #6366f1cc;
+            opacity: 0;
+            pointer-events: none;
+            margin: 0;
+            white-space: nowrap;
+        }
+        .img-container:hover img {
+            transform: scale(1.05) rotate(-2deg);
+            box-shadow: 0 8px 32px 0 #6366f1cc;
+            opacity: 0.2;
+        }
+        .img-container:hover p {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>歡迎使用 Git &amp; Github</h1>
+    <div class="img-container">
+        <img src="kitty-cat-kitten-pet-45201.jpeg" alt="貓咪" style="max-width:320px;width:90vw;border-radius:1.5em;box-shadow:0 4px 24px 0 #6366f180;border:4px solid #a5b4fc;display:block;margin:0 auto 1em auto;">
+        <p style="color:#374151;font-size:1.5em;font-weight:bold;margin:1.5em 0;text-align:center;">我喜歡河馬</p>
+    </div>
+    <div class="accordion-group">
+        <div class="accordion-item">
+            <button class="accordion-btn">展開說明一</button>
+            <div class="accordion-panel">
+                <p>這是第一項的詳細說明內容。</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-btn">展開說明二</button>
+            <div class="accordion-panel">
+                <p>這是第二項的詳細說明內容。</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-btn">展開說明三</button>
+            <div class="accordion-panel">
+                <p>這是第三項的詳細說明內容。</p>
+            </div>
+        </div>
+    </div>
+    <style>
+        .accordion-group {
+            width: 90vw;
+            max-width: 340px;
+            margin: 0 auto 1em auto;
+        }
+        .accordion-item {
+            margin-bottom: 0.5em;
+            border-radius: 0.7em;
+            overflow: hidden;
+            box-shadow: 0 2px 8px #6366f120;
+            background: #fff8;
+        }
+        .accordion-btn {
+            width: 100%;
+            background: #818cf8;
+            color: #fff;
+            border: none;
+            outline: none;
+            padding: 0.8em 1em;
+            font-size: 1.1em;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-align: left;
+        }
+        .accordion-btn:hover, .accordion-btn.active {
+            background: #6366f1;
+        }
+        .accordion-panel {
+            max-height: 0;
+            overflow: hidden;
+            background: #f1f5f9cc;
+            transition: max-height 0.3s cubic-bezier(.4,0,.2,1);
+            padding: 0 1em;
+        }
+        .accordion-panel.open {
+            padding: 1em;
+            max-height: 200px;
+        }
+    </style>
+    </div>
+    <button id="hello-btn" style="font-size:1.2em;padding:0.5em 2em;border-radius:1em;border:none;background:#6366f1;color:#fff;box-shadow:0 2px 8px #6366f180;cursor:pointer;transition:background 0.2s;">你好</button>
+    <script>
+        document.getElementById('hello-btn').onclick = function() {
+            alert('歡迎光臨');
+        };
+        // Accordion 展開收合
+        document.querySelectorAll('.accordion-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var panel = btn.nextElementSibling;
+                var isOpen = panel.classList.contains('open');
+                document.querySelectorAll('.accordion-panel').forEach(function(p) {
+                    p.classList.remove('open');
+                    p.previousElementSibling.classList.remove('active');
+                });
+                if (!isOpen) {
+                    panel.classList.add('open');
+                    btn.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
