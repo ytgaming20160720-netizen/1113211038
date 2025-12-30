@@ -1,0 +1,51 @@
+// 引入 Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// 全域設置
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+// 導覽列模糊效果
+.navbar {
+  backdrop-filter: blur(15px);
+  background-color: rgba(33, 37, 41, 0.85) !important;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+// 滿版 Hero 區
+.hero-section {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+              url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+// 區塊基礎間距
+section {
+  padding: 100px 0;
+}
+
+// 講者輪播圖
+.carousel-item img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+// 議程卡片效果
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+  }
+}
